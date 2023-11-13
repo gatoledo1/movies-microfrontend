@@ -1,0 +1,49 @@
+.panel {
+  width: 91%;
+  max-width: 420px;
+  height: 38px;
+  position: fixed;
+  margin: 0 1rem;
+  bottom: 0;
+  background-color: hsl(223, 36%, 14%);
+  border-radius: 1rem 1rem 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px 0;
+  z-index: 1000;
+
+  @media (min-width: 421px) {
+    flex-direction: column;
+    top: 1rem;
+    max-width: 58px;
+    height: 330px;
+    border-radius: 1rem;
+    justify-content: space-between;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @media (min-width: 421px) {
+      flex-direction: column;
+    }
+ 
+  }
+
+  svg {
+    font-size: 26px;
+    cursor: pointer;
+    color: hsl(221, 23%, 43%);
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &.active {
+      color: #fff;
+    }
+  }
+}
