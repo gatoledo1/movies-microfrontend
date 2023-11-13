@@ -34,10 +34,10 @@ module.exports = {
             favicon: "./public/favicon.ico",
         }),
         new ModuleFederationPlugin({
-            name: "PainelApp",
+            name: "PanelApp",
             filename: "remoteEntry.js",
             exposes: {
-              "./Painel": "./src/App",
+              "./Panel": "./src/App",
             },
             shared: {
               ...dependencies,

@@ -2,46 +2,43 @@ import React, { useState } from "react";
 import { MdArrowBack } from "react-icons/md";
 import { FiExternalLink } from "react-icons/fi";
 import { BsStarHalf } from "react-icons/bs";
-
-import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { getMovie } from '../../services/getMovie'
 import defaultImage from "../../assets/no-image.jpg";
 
 const Details = () => {
-  let params = useParams();
   let navigate = useNavigate();
-
+  
   const [movie, setMovie] = useState();
 
-  const fetchMovie = async (id) => {
-    const data = await fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=7a7574485f97a58f2cf1ac99d340bd5a&language=pt-BR`
-    );
-    const movie = await data.json();
-    setMovie(movie);
-  };
-
   useEffect(() => {
-    fetchMovie(params.movieId);
-  }, [movie]);
+    const regex = /([^/]+)\/?$/;
+    const pathname = regex.exec(window.location.pathname)
+
+    async function fetchMovie(id) {
+      const data = await getMovie("movie", id);
+      setMovie(data);
+    }
+    fetchMovie(pathname[0]);
+  }, []);
 
   return (
     <div>
-      <div className="back">
-        <MdArrowBack onClick={() => navigate(-1)} />
+      <div className="back" role="button" aria-pressed="false" onClick={() => navigate(-1)}>
+        <MdArrowBack />
       </div>
       {movie && (
         <div className="container details">
           <h1 className="section-title">{movie.original_title}</h1>
           {movie.poster_path !== null ? (
             <img
+              alt="cover"
               className="img-bg"
               src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
             />
           ) : (
-            <img className="img-bg" src={defaultImage} />
+            <img className="img-bg" src={defaultImage} alt="cover" />
           )}
           <div>
             <h4>Overview</h4>
@@ -73,8 +70,8 @@ const Details = () => {
           <div>
             <h4>Production countries</h4>
             <ul>
-              {movie.production_countries.map((prod) => (
-                <li>{prod.name}</li>
+              {movie.production_countries.map((prod, index) => (
+                <li key={index}>{prod.name}</li>
               ))}
             </ul>
           </div>

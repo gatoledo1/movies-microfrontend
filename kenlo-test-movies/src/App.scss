@@ -15,8 +15,11 @@ body {
 .container {
   padding: 0 1rem;
 
-  @media (min-width: 421px) {
+  @media (min-width: 501px) {
     margin-left: 70px;
+  }
+  @media (min-width: 768px) {
+    padding: 0 1rem 0 2rem;
   }
 }
 
@@ -24,11 +27,11 @@ body {
 
 .popular-movies {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(146px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(152px, 1fr));
   gap: 1rem;
 
   @media (min-width: 600px) {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   }
 }
 
@@ -44,6 +47,7 @@ body {
   border-radius: 10px;
   overflow: hidden;
   position: relative;
+  min-height: 230px;
 
   &:hover {
     box-shadow: 0px 0px 24px 0px hsl(223, 36%, 36%);
@@ -81,6 +85,7 @@ body {
     cursor: pointer;
     z-index: 1;
     opacity: 0.6;
+    color: #ffc800;
 
     &:hover {
       opacity: 1;
@@ -175,10 +180,10 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 15px 0;
+  cursor: pointer;
 
   svg {
     font-size: 20px;
-    cursor: pointer;
     color: hsl(221, 23%, 73%);
 
     &:hover {

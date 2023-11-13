@@ -1,6 +1,5 @@
 .panel {
-  width: 91%;
-  max-width: 420px;
+  width: calc(100% - 2rem);
   height: 38px;
   position: fixed;
   margin: 0 1rem;
@@ -13,7 +12,7 @@
   padding: 15px 0;
   z-index: 1000;
 
-  @media (min-width: 421px) {
+  @media (min-width: 501px) {
     flex-direction: column;
     top: 1rem;
     max-width: 58px;
@@ -27,7 +26,7 @@
     align-items: center;
     gap: 20px;
 
-    @media (min-width: 421px) {
+    @media (min-width: 501px) {
       flex-direction: column;
     }
  

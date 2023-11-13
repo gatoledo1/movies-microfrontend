@@ -1,34 +1,27 @@
-import React, { useContext, useEffect, useState } from "react";
-import MovieContext from "../MovieContext";
+import React, { useEffect, useState } from "react";
 import dataMenu from "../dataMenu";
 import { BiArrowFromRight } from "react-icons/bi";
 import { MdMoreHoriz } from "react-icons/md";
 
 const Filter = ({setNewData, data}) => {
-  const { setFiltered, movies, header } =
-    useContext(MovieContext);
 
   const [moreGenres, setMoreGenres] = useState(false);
   const [activeGenre, setActiveGenre] = useState(0);
 
   useEffect(() => {
-    if (activeGenre !== 0) {
-      const filtered = movies.filter((movie) =>
-        movie.genre_ids.includes(activeGenre)
-      );
-      setFiltered(filtered);
+    if(data?.current) {
+      if (activeGenre === 0) {
+        setNewData(data.current)
+      } else {
+        const filtered = data.current.results?.filter((movie) =>
+          movie.genre_ids.includes(activeGenre)
+        );
+        setNewData({...data, results: filtered})
+      }
     }
-  }, [activeGenre, header]);
 
-
-  // useEffect(() => {
-  //   if (activeGenre !== 0) {
-  //     const filtered = data?.filter((movie) =>
-  //       movie.genre_ids.includes(activeGenre)
-  //     );
-  //     setNewData(filtered);
-  //   }
-  // }, [activeGenre, data]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeGenre, data?.current]);
 
   return (
     <div className="filter-container">

@@ -27,8 +27,7 @@ const Panel = () => {
         <a href={"/em-breve"}>
         {mapSVGs["upComing"]}
         </a>
-        {/* Favoritos */}
-        <a href={"/"}>
+        <a href={"/favoritos"}>
         {mapSVGs["favorite"]}
         </a>
       </div>

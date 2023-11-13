@@ -1,0 +1,23 @@
+{
+  "name": "movies-microfrontend",
+  "version": "1.0.0",
+  "description": "Aplicação ReactJS para o teste da Kenlo. Representa um site com listagem de filmes de uma API publica. Criado com microfrontend baseado em Webpack, Module Federation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm start --prefix header-app\" \"npm start --prefix kenlo-test-movies\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gatoledo1/movies-microfrontend.git"
+  },
+  "author": "Gabriel Toledo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gatoledo1/movies-microfrontend/issues"
+  },
+  "homepage": "https://github.com/gatoledo1/movies-microfrontend#readme",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

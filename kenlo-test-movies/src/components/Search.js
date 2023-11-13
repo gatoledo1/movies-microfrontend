@@ -1,19 +1,17 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { RiSearchLine } from "react-icons/ri";
 
-import MovieContext from "../MovieContext";
+import { searchMovies } from "../services/searchMovies";
 
 const Search = ({setNewData}) => {
   const [value, setValue] = useState("");
-  const { fetchPopular, fetchSearch } = useContext(MovieContext);
 
-  const onKeyUp = (event) => {
+  const onKeyUp = async (event) => {
     if (event.key === "Enter" && value !== "") {
       const query = value.trim();
-      if (query === "") {
-        fetchPopular();
-      } else {
-        fetchSearch(query);
+      if (query !== "") {
+        const newList = await searchMovies("search/movie", query);
+        setNewData(newList)
       }
       setValue("");
     }
