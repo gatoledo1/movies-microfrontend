@@ -1,0 +1,42 @@
+.filter-container {
+  margin: 20px 0 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 100%;
+
+  button {
+    background-color: var(--blue);
+    color: var(--light);
+    font-family: "Inter", sans-serif;
+    border: none;
+    padding: 14px 25px;
+    cursor: pointer;
+    font-weight: 500;
+
+    &:hover {
+      background-color: var(--blue);
+    }
+
+    &.active {
+      background-color: var(--light);
+      color: var(--background);
+    }
+
+    &.more {
+      color: var(--light);
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+
+      &:hover {
+        background-color: var(--strong-blue);
+      }
+    }
+    &:last-child {
+      border-radius: 0 15px 15px 0;
+    }
+  }
+}

@@ -1,11 +1,11 @@
 const dataMenu = [
   {
     id: 16,
-    name: "Animation",
+    name: "Animação",
   },
   {
     id: 35,
-    name: "Comedy",
+    name: "Comedia",
   },
   {
     id: 80,
@@ -13,7 +13,7 @@ const dataMenu = [
   },
   {
     id: 99,
-    name: "Documentary",
+    name: "Documentario",
   },
   {
     id: 18,
@@ -21,15 +21,23 @@ const dataMenu = [
   },
   {
     id: 10751,
-    name: "Family",
+    name: "Familia",
   },
   {
     id: 14,
-    name: "Fantasy",
+    name: "Fantasia",
+  },
+  {
+    id: 878,
+    name: "Ficção Científica",
+  },
+  {
+    id: 10752,
+    name: "Guerra",
   },
   {
     id: 36,
-    name: "History",
+    name: "História",
   },
   {
     id: 27,
@@ -37,35 +45,27 @@ const dataMenu = [
   },
   {
     id: 10402,
-    name: "Music",
+    name: "Musical",
   },
   {
     id: 9648,
-    name: "Mystery",
+    name: "Mistério",
+  },
+  {
+    id: 37,
+    name: "Ocidental",
   },
   {
     id: 10749,
     name: "Romance",
   },
   {
-    id: 878,
-    name: "Science Fiction",
-  },
-  {
     id: 10770,
-    name: "TV Movie",
+    name: "TV",
   },
   {
     id: 53,
     name: "Thriller",
-  },
-  {
-    id: 10752,
-    name: "War",
-  },
-  {
-    id: 37,
-    name: "Western",
   },
 ];
 

@@ -1,9 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 
+:root {
+  --strong-blue: hsl(223, 36%, 24%);
+  --blue: hsl(223, 36%, 16%);
+  --blue-2: #1e3497;
+  --background: hsl(224, 32%, 9%);
+  --light: hsl(223, 36%, 94%);
+}
+
+body {
+  --sb-track-color: #181c27;
+  --sb-thumb-color: #222d4c;
+  --sb-size: 12px;
+
+  scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 12px;
+}
+
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
-  background-color: hsl(224, 32%, 9%);
+  background-color: var(--background);
 }
 
 .App {
@@ -23,226 +53,10 @@ body {
   }
 }
 
-/* MOVIES */
-
-.popular-movies {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(152px, 1fr));
-  gap: 1rem;
-
-  @media (min-width: 600px) {
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  }
-}
-
 .section-title {
   color: hsl(223, 36%, 84%);
-  height: 100%;
-  margin: 35px 0;
-}
-
-/* MOVIE */
-
-.movie {
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-  min-height: 230px;
-
-  &:hover {
-    box-shadow: 0px 0px 24px 0px hsl(223, 36%, 36%);
-  }
-
-  .shadow {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    cursor: pointer;
-  }
-
-  h2 {
-    margin: 15px 10px;
-    font-weight: 600;
-    position: absolute;
-    bottom: 0;
-    font-size: 1rem;
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  svg {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 1;
-    opacity: 0.6;
-    color: #ffc800;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-}
-
-/* FILTER */
-
-.filter-container {
-  margin: 20px 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1px;
-  border-radius: 15px;
-  overflow: hidden;
-  width: 100%;
-
-  button {
-    background-color: hsl(223, 36%, 16%);
-    color: hsl(223, 36%, 94%);
-    font-family: "Inter", sans-serif;
-    border: none;
-    padding: 14px 25px;
-    cursor: pointer;
-    font-weight: 500;
-
-    &:hover {
-      background-color: hsl(223, 36%, 24%);
-    }
-
-    &.active {
-      background-color: hsl(224, 32%, 94%);
-      color: hsl(224, 32%, 9%);
-    }
-
-    &.more {
-      color: hsl(221, 23%, 63%);
-      background-color: transparent;
-      display: flex;
-      align-items: center;
-      font-size: 18px;
-      padding: 0 10px;
-
-      &:hover {
-        background-color: hsl(223, 36%, 24%);
-      }
-    }
-  }
-}
-
-/* SEARCH */
-
-.search-movies {
-  max-width: 340px;
-  margin-top: 15px;
-  padding: 10px 0 10px 10px;
-  border-radius: 25px;
-  background: hsl(223, 36%, 16%);
-
-  svg {
-    font-size: 14px;
-  }
-
-  input {
-    background-color: transparent;
-    border: none;
-    font-family: "Inter", sans-serif;
-    font-size: 1rem;
-    color: hsl(224, 32%, 94%);
-    margin-left: 15px;
-    width: 80%;
-
-    &:focus {
-      outline: none;
-    }
-  }
-}
-
-/* MOVIE DETAILS */
-
-.back {
-  height: max-content;
-  margin-top: 10px;
-  width: 55px;
-  position: fixed;
-  top: 20px;
-  background-color: hsl(223, 36%, 14%);
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 0;
-  cursor: pointer;
-
-  svg {
-    font-size: 20px;
-    color: hsl(221, 23%, 73%);
-
-    &:hover {
-      opacity: 0.7;
-    }
-
-    &.active {
-      color: #fff;
-    }
-  }
-}
-
-.img-bg {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  z-index: -2;
-  opacity: 0.25;
-  object-fit: cover;
-}
-
-.details {
-  h4 {
-    margin: 0;
-    color: hsl(223, 36%, 92%);
-  }
-
-  ul {
-    padding: 0;
-    list-style: none;
-    color: hsl(223, 36%, 82%);
-    margin-bottom: 20px;
-    margin-top: 10px;
-  }
-
-  p {
-    color: hsl(223, 36%, 82%);
-    margin-bottom: 20px;
-    margin-top: 5px;
-  }
-
-  a {
-    text-decoration: none;
-    color: hsl(223, 36%, 75%);
-
-    &:hover {
-      opacity: 0.7;
-    }
-  }
-}
-
-#rate {
-  color: yellow;
-  border-radius: 15px;
-  width: max-content;
-
-  svg {
-    margin-right: 5px;
+  text-align: center;
+  @media (min-width: 922px) {
+    text-align: left;
   }
 }

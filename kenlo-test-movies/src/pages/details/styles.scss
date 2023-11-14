@@ -1,0 +1,131 @@
+.details-block {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  @media (min-width: 600px) {
+    flex-direction: row;
+  }
+  .container-details {
+    margin-right: 1rem;
+    max-width: 1300px;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    @media (min-width: 600px) {
+      margin: 2rem 1rem 0 0;
+    }
+  
+    .flex-details {
+      display: flex;
+      gap: 24px;
+      flex-direction: column;
+      @media (min-width: 922px) {
+        flex-direction: row;
+      }
+      .cover-img {
+        min-width: 290px;
+        max-width: 360px;
+        margin-inline: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        @media (min-width: 922px) {
+          margin-inline: 0;
+        }
+      }
+      .flex-items {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    }
+  
+    h4 {
+      margin: 0;
+      color: var(--light);
+    }
+  
+    ul {
+      padding: 0;
+      list-style: none;
+      color: var(--light);
+      margin-bottom: 20px;
+      margin-top: 10px;
+    }
+  
+    p {
+      color: var(--light);
+      line-height: 24px;
+      margin-bottom: 20px;
+      margin-top: 5px;
+    }
+  
+    .site {
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      background: #1e3497;
+      padding: 10px 24px;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+  
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+  
+  .back {
+    height: max-content;
+    margin-top: 10px;
+    min-width: 50px;
+    width: 50px;
+    margin-left: 1rem;
+    background-color: #1e3497;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    cursor: pointer;
+  
+    svg {
+      font-size: 20px;
+      color: var(--light);
+  
+      &:hover {
+        opacity: 0.7;
+      }
+  
+      &.active {
+        color: #fff;
+      }
+    }
+  }
+  
+  .img-bg {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+    opacity: 0.25;
+    object-fit: cover;
+    filter: blur(6px)
+  }
+  
+  #rate {
+    color: yellow;
+    border-radius: 15px;
+    width: max-content;
+  
+    svg {
+      margin-right: 5px;
+    }
+  }
+}

@@ -1,19 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
-import { motion } from "framer-motion";
-import defaultImage from "../assets/no-image.jpg";
-import { useFavourites } from "../utils/useFavorites";
+import defaultImage from "../../assets/no-image.jpg";
+import { useFavourites } from "../../utils/useFavorites";
+import "./styles.scss"
+import { MovieData } from "../../types/MovieData";
 
-function Movie({ movie }) {
+interface ComponentTypes {
+  movie: MovieData;
+  detailsPage?: boolean | null;
+}
+
+function Movie<T>({ movie, detailsPage = null }: ComponentTypes) {
   const { isFav, addToFavourites } = useFavourites()
 
   return (
-    <motion.div
-      animate={{ opacity: 1 }}
-      initial={{ opacity: 0 }}
-      exit={{ opacity: 0 }}
-      layout
+    <div
       className="movie"
     >
        {isFav(movie.id) ? (
@@ -22,15 +24,15 @@ function Movie({ movie }) {
         <AiFillStar onClick={() => addToFavourites(movie)} />
       )}
       <Link to={`/movie/${movie.id}`} key={movie.id}>
-        <div className="shadow"></div>
+        { !detailsPage && (<div className="shadow"></div>)}
       </Link>
       {movie.poster_path !== null ? (
         <img src={"https://image.tmdb.org/t/p/w500" + movie.poster_path} alt="movie-cover" />
       ) : (
         <img src={defaultImage} alt="movie-cover" />
       )}
-      <h2>{movie.title}</h2>
-    </motion.div>
+      {!detailsPage && (<h2>{movie.title}</h2>)}
+    </div>
   );
 }
 
