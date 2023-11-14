@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import './App.scss';
 
 const Panel = () => {
-
+  const [url, setUrl] = useState("")
   const mapSVGs = {
     popular: (<svg stroke="currentColor" fill="#546487" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M10 11l-.94 2.06L7 14l2.06.94L10 17l.94-2.06L13 14l-2.06-.94zm8.01-7l2 4h-3l-2-4h-2l2 4h-3l-2-4h-2l2 4h-3l-2-4h-1c-1.1 0-1.99.9-1.99 2l-.01 12c0 1.1.9 2 2 2h16c1.1 0 1.99-.9 1.99-2V4h-3.99zm2 14h-16V6.47L5.77 10H16l-.63 1.37L14 12l1.37.63L16 14l.63-1.37L18 12l-1.37-.63L16 10h4.01v8z"></path></svg>),
     nowPlaying: (<svg stroke="currentColor" fill="#546487" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M20 3H4c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm.001 6c-.001 0-.001 0 0 0h-.465l-2.667-4H20l.001 4zM9.536 9 6.869 5h2.596l2.667 4H9.536zm5 0-2.667-4h2.596l2.667 4h-2.596zM4 5h.465l2.667 4H4V5zm0 14v-8h16l.002 8H4z"></path><path d="m10 18 5.5-3-5.5-3z"></path></svg>),
@@ -12,22 +12,26 @@ const Panel = () => {
     user: (<svg stroke="currentColor" fill="#546487" strokeWidth="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"></path></svg>),
   }
 
+  useEffect(() => {
+    setUrl(window.location.pathname)
+  }, [])
+
   return (
     <div className="panel">
       <div>
-        <a href={"/"}>
+        <a href={"/"} {...(url === "/" && { className: "active" })}>
           {mapSVGs["popular"]}
         </a>
-        <a href={"/exibicao"}>
+        <a href={"/exibicao"} {...(url === "/exibicao" && { className: "active" })}>
         {mapSVGs["nowPlaying"]}
         </a>
-        <a href={"/top"}>
+        <a href={"/top"} {...(url === "/top" && { className: "active" })}>
         {mapSVGs["top"]}
         </a>
-        <a href={"/em-breve"}>
+        <a href={"/em-breve"} {...(url === "/em-breve" && { className: "active" })}>
         {mapSVGs["upComing"]}
         </a>
-        <a href={"/favoritos"}>
+        <a href={"/favoritos"} {...(url === "/favoritos" && { className: "active" })}>
         {mapSVGs["favorite"]}
         </a>
       </div>

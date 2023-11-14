@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { MovieData } from "../types/MovieData";
 
-function getStorageValue(key, defaultValue) {
+function getStorageValue(key: string, defaultValue: Array<null>) {
   const saved = localStorage.getItem(key);
   const initial = JSON.parse(saved);
   return initial || defaultValue;
 }
 
-export const useLocalStorage = (key, defaultValue) => {
+export const useLocalStorage = (key: string, defaultValue: Array<null>): [MovieData[], React.Dispatch<any>] => {
   const [value, setValue] = useState(() => {
     return getStorageValue(key, defaultValue);
   });

@@ -7,8 +7,10 @@
     "jsx": "react",
     "allowJs": true,
     "moduleResolution": "node",
-    "strict": false
+    "strict": false,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "./src/@types/types.d.ts"],
   "exclude": ["node_modules"]
 }

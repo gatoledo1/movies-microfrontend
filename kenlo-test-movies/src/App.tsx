@@ -2,7 +2,7 @@ import React from "react";
 import "./App.scss";
 import { Routes, Route } from "react-router-dom";
 import Details from "./pages/details";
-import ContainerMovies from "./pages/home";
+import ContainerMovies from "./pages/listMovies";
 
 function App() {
   return (

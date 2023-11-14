@@ -1,0 +1,25 @@
+.search-movies {
+  max-width: 340px;
+  margin-top: 15px;
+  padding: 10px 0 10px 10px;
+  border-radius: 15px;
+  background: var(--blue);
+
+  svg {
+    font-size: 14px;
+  }
+
+  input {
+    background-color: transparent;
+    border: none;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    color: var(--light);
+    margin-left: 15px;
+    width: 80%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

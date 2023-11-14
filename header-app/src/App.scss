@@ -32,6 +32,10 @@
  
   }
 
+  .active svg {
+    fill: #fff;
+  }
+
   svg {
     font-size: 26px;
     cursor: pointer;
@@ -41,8 +45,6 @@
       opacity: 0.7;
     }
 
-    &.active {
-      color: #fff;
-    }
+    
   }
 }
