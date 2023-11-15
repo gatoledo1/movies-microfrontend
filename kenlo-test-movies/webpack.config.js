@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const { dependencies } = require("./package.json");
 const Dotenv = require("dotenv-webpack");
-// const path = require('path');
+const path = require('path');
 
 module.exports = {
   entry: "./src/entry",
@@ -76,8 +76,8 @@ module.exports = {
     extensions: [".js", ".ts", ".tsx"],
   },
   output: {
+    path: path.resolve(__dirname, 'build'),
     filename: "bundle.js",
-    // path: path.resolve(__dirname, 'dist'),
   },
   target: "web",
 };
