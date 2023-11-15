@@ -10,7 +10,6 @@ import Movie from "../../components/Movie";
 import "./styles.scss";
 import { MovieData } from "../../types/MovieData";
 
-
 const Details = () => {
   let navigate = useNavigate();
 
@@ -36,7 +35,7 @@ const Details = () => {
         <div className="container-details">
           <div className="flex-details">
             <div className="cover-img">
-              <Movie<MovieData> movie={movie} detailsPage={true} />
+              <Movie movie={movie} detailsPage={true} />
               {movie?.homepage && (
                 <a className="site" href={movie?.homepage}>
                   <span> Acessar site do filme </span>

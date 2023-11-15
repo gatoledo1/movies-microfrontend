@@ -12,6 +12,14 @@ const Panel = () => {
     user: (<svg stroke="currentColor" fill="#546487" strokeWidth="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"></path></svg>),
   }
 
+  const panelItems = [
+    { path: "/", label: "popular" },
+    { path: "/exibicao", label: "nowPlaying" },
+    { path: "/top", label: "top" },
+    { path: "/em-breve", label: "upComing" },
+    { path: "/favoritos", label: "favorite" },
+  ];
+
   useEffect(() => {
     setUrl(window.location.pathname)
   }, [])
@@ -19,25 +27,14 @@ const Panel = () => {
   return (
     <div className="panel">
       <div>
-        <a href={"/"} {...(url === "/" && { className: "active" })}>
-          {mapSVGs["popular"]}
-        </a>
-        <a href={"/exibicao"} {...(url === "/exibicao" && { className: "active" })}>
-        {mapSVGs["nowPlaying"]}
-        </a>
-        <a href={"/top"} {...(url === "/top" && { className: "active" })}>
-        {mapSVGs["top"]}
-        </a>
-        <a href={"/em-breve"} {...(url === "/em-breve" && { className: "active" })}>
-        {mapSVGs["upComing"]}
-        </a>
-        <a href={"/favoritos"} {...(url === "/favoritos" && { className: "active" })}>
-        {mapSVGs["favorite"]}
-        </a>
+        {panelItems.map((item) => (
+          <a key={item.path} href={item.path} className={url === item.path ? "active" : ""}>
+            {mapSVGs[item.label]}
+          </a>
+        ))}
       </div>
       <div>
-
-      {mapSVGs["user"]}
+        {mapSVGs["user"]}
       </div>
     </div>
   );

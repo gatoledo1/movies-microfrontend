@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"npm start --prefix header-app\" \"npm start --prefix kenlo-test-movies\""
+    "start": "concurrently \"npm start --prefix header-app\" \"npm start --prefix kenlo-test-movies\"",
+    "build": "concurrently \"npm run build --prefix header-app\" \"npm run build --prefix kenlo-test-movies\""
   },
   "repository": {
     "type": "git",

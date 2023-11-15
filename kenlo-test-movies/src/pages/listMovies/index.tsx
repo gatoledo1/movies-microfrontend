@@ -1,6 +1,4 @@
-//@ts-ignore
 import React, { useEffect, useState, lazy, Suspense, useRef, useMemo } from "react";
-
 import Search from "../../components/Search";
 import Filter from "../../components/Filter";
 import Header from "../../components/Header";
@@ -19,7 +17,7 @@ interface ComponentTypes {
 //@ts-ignore
 const Painel = lazy(() => import("PanelApp/Panel"));
 
-const ContainerMovies = ({ filter, header }:ComponentTypes) => {
+const ContainerMovies = ({ filter, header }: ComponentTypes) => {
   const [homeData, setHomeData] = useState<DataRequest>();
   const dataMutable = useRef<DataRequest>();
   const { favourites } = useFavourites();
@@ -60,19 +58,23 @@ const ContainerMovies = ({ filter, header }:ComponentTypes) => {
         ) : (
           <Loader width={140} height={140} styles={{ display: "flex", justifyContent: "center", alignItems: "center" }} />
         )}
-        {loading && <Loader width={80} height={80} styles={{ display: "flex", justifyContent: "center", alignItems: "center", marginBlock: "1rem" }} />}
-        {(homeData?.results && filter) && (
+        {loading && (
+          <Loader
+            width={80}
+            height={80}
+            styles={{ display: "flex", justifyContent: "center", alignItems: "center", marginBlock: "1rem" }}
+          />
+        )}
+        {homeData?.results && filter && (
           <InView
             as="div"
             onChange={async (inView: any) => {
               if (inView && !searchValue) {
                 setLoading(true);
                 const data = await getMovies(filter, pageState + 1);
-                let filtered = data?.results
+                let filtered = data?.results;
                 if (genre !== 0) {
-                  filtered = data?.results?.filter((movie: { genre_ids: number[]; }) =>
-                    movie.genre_ids.includes(genre)
-                  );
+                  filtered = data?.results?.filter((movie: { genre_ids: number[] }) => movie.genre_ids.includes(genre));
                 }
                 setHomeData({
                   page: pageState + 1,
