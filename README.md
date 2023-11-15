@@ -15,14 +15,23 @@ Bibliotecas utilizadas e recursos desenvolvidos:
 6. `concurrently` - Ferramenta para iniciar dois aplicativos separados simultaneamente.
    
 
-O objetivo é transformar esse design em um sistema funcional na web, integrando-o com a biblioteca [JSON Server](https://github.com/typicode/json-server) junto com o JSON fornecido, para simular um back-end para a aplicação. O sistema inclui funcionalidades de listagem com filtros, inclusão, edição e remoção de recebedores de pagamento.
+## 👉 Desafio
 
-<img src="https://github.com/gatoledo1/movies-microfrontend/assets/19327889/2b1eed24-260e-494b-8dea-89a7770a2b58" width="390" height="240">
-<img src="https://github.com/gatoledo1/movies-microfrontend/assets/19327889/b0174a56-8bbe-4289-8aff-d5e1bf081311" width="390" height="240"> 
+Crie uma aplicação com estilo livre usando Micro-Frontend usando React + Algum framework de sua escolha, onde a parte superior deve ser um menu e a parte inferior o corpo deve consumir uma a API de sua escolha
+- Se uma hospedagem online na Vercel (Gratuito);
+- Você deverá desenvolver 1 interface com 2 projetos;
+- Consumir uma api de sua preferência;
+- Utilizar o module federation do webpack ou similar do vitejs;
+- Utilizar Sass ou CSS;
+- Trabalha com componentização;
+
 
 ---
 
 Abaixo estão instruções detalhadas sobre como configurar e executar o projeto.
+
+<img src="https://github.com/gatoledo1/movies-microfrontend/assets/19327889/2b1eed24-260e-494b-8dea-89a7770a2b58" width="390" height="240">
+<img src="https://github.com/gatoledo1/movies-microfrontend/assets/19327889/b0174a56-8bbe-4289-8aff-d5e1bf081311" width="390" height="240"> 
 
 
 ## ✅ Pré-requisitos
