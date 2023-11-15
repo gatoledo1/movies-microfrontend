@@ -1,10 +1,15 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const { dependencies } = require("./package.json");
+const path = require("path");
 
 module.exports = {
     entry: "./src/entry.js",
     mode: "development",
+    output: {
+        path: path.resolve(__dirname, "build"),
+        filename: "bundle.js",
+    },
     devServer: {
         port: 3001,
     },
