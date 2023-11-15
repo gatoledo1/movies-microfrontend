@@ -1,5 +1,5 @@
 import { MovieData } from "../types/MovieData";
-import { useLocalStorage } from "./useLocalStorage"
+import { useLocalStorage } from "./useLocalStorage";
 
 export const useFavourites = () => {
   const [favourites, setFavourites] = useLocalStorage("fav", []);
