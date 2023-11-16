@@ -5,7 +5,7 @@ Este repositório contém duas aplicações React criada com `create-react-app`.
 
 ### ✨ Informações adicionais
 
-*Consume da API: https://www.themoviedb.org/movie*
+*Consume a API: https://developer.themoviedb.org/reference/intro/getting-started*
 
 Bibliotecas utilizadas e recursos desenvolvidos:
 
