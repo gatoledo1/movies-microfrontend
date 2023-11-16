@@ -5,6 +5,8 @@ Este repositório contém duas aplicações React criada com `create-react-app`.
 
 ### ✨ Informações adicionais
 
+*Consume da API: https://www.themoviedb.org/movie*
+
 Bibliotecas utilizadas e recursos desenvolvidos:
 
 1. `Webpack e Module Federation` - Para trabalhar com a construção do projeto, criando o Front remoto e acoplando ao projeto principal
@@ -20,10 +22,10 @@ Bibliotecas utilizadas e recursos desenvolvidos:
 Crie uma aplicação com estilo livre usando Micro-Frontend usando React + Algum framework de sua escolha, onde a parte superior deve ser um menu e a parte inferior o corpo deve consumir uma a API de sua escolha
 - Se uma hospedagem online na Vercel (Gratuito);
 - Você deverá desenvolver 1 interface com 2 projetos;
-- Consumir uma api de sua preferência;
+- Consumir uma API de sua preferência;
 - Utilizar o module federation do webpack ou similar do vitejs;
-- Utilizar Sass ou CSS;
-- Trabalha com componentização;
+- Utilizar SASS ou CSS;
+- Trabalhar com componentização;
 
 
 ---
