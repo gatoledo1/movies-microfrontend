@@ -28,11 +28,12 @@ Crie uma aplicação com estilo livre usando Micro-Frontend usando React + Algum
 
 ---
 
+
+<img src="https://github.com/gatoledo1/movies-microfrontend/assets/19327889/2b1eed24-260e-494b-8dea-89a7770a2b58" width="390" height="283">
+<img src="https://github.com/gatoledo1/movies-microfrontend/assets/19327889/b0174a56-8bbe-4289-8aff-d5e1bf081311" width="390" height="283"> 
+
+
 Abaixo estão instruções detalhadas sobre como configurar e executar o projeto.
-
-<img src="https://github.com/gatoledo1/movies-microfrontend/assets/19327889/2b1eed24-260e-494b-8dea-89a7770a2b58" width="390" height="240">
-<img src="https://github.com/gatoledo1/movies-microfrontend/assets/19327889/b0174a56-8bbe-4289-8aff-d5e1bf081311" width="390" height="240"> 
-
 
 ## ✅ Pré-requisitos
 
@@ -58,30 +59,51 @@ Certifique-se de que você tenha o [Node.js](https://nodejs.org/) e o [npm](http
    npm install
    ```
 
-3. Instale as dependências dos projetos internos executando:
+#### OBS: Os frontends estão agrupados dentro desse diretorio, o start será feito nele (movies-microfrontend) daqui a pouco, primeiro vamos instalar as dependencias de cada projeto:
 
+1. Navegue até o diretório kenlo-test-movies e execute o comando:
+
+  ```bash
+   cd kenlo-test-movies
+   ```
+depois:
    ```bash
    npm install
    ```
+   
+3. Despois faça o mesmo com o diretório header-app:
 
-## 💻 Executando a aplicação
-
-1. Para iniciar o servidor de desenvolvimento e executar o aplicativo, utilize o seguinte comando em uma aba do terminal:
+  ```bash
+   cd header-app
+   ```
+depois:
+   ```bash
+   npm install
+   ```
+4. Agora retorne a raiz movies-microfrontend
 
    ```bash
-   npm run server
+   cd ..
    ```
 
-2. Em outra aba do terminal execute o app:
+5. Pronto, agora pode iniciar o projeto!
 
    ```bash
    npm start
    ```
-Isso iniciará o servidor de desenvolvimento e abrirá o aplicativo no seu navegador padrão. 
-   
-OBS: A aplicação não quebrará se o server for iniciado depois, mas para obter os dados, a página deverá ser recarregada.
+
+## 💻 Estrutura
+
+O projeto header-app consiste em uma aplicação react somente com o menu, na configuração do Webpack do projeto, a aplicação é externalizada em `http://localhost:3001/remoteEntry.js`
+
+<img src="https://github.com/gatoledo1/movies-microfrontend/assets/19327889/22e008ac-f397-48a5-970c-0d4de2005e64" width="290" height="267"> 
+
+No projeto kenlo-test-movies, onde contém o container da aplicação (sem o menu), é feita a captura da aplicação remota.
+
+OBS: O start simultâneo serve para facilitar a execução local, acesse também o link da [Vercel](https://app-movies-microfrontend.vercel.app/) 
 
 
+✨ Divirta-se navegando entre os filmes 
 
 
 
