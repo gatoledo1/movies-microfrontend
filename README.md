@@ -34,6 +34,7 @@ Crie uma aplicação com estilo livre usando Micro-Frontend usando React + Algum
 <img src="https://github.com/gatoledo1/movies-microfrontend/assets/19327889/2b1eed24-260e-494b-8dea-89a7770a2b58" width="390" height="283">
 <img src="https://github.com/gatoledo1/movies-microfrontend/assets/19327889/b0174a56-8bbe-4289-8aff-d5e1bf081311" width="390" height="283"> 
 
+## [Figma - Wireframe](https://www.figma.com/community/file/1306985064619527096/movies-microfrontend)
 
 Abaixo estão instruções detalhadas sobre como configurar e executar o projeto.
 
