@@ -27,7 +27,7 @@ const Search = ({ setNewData, value, setValue }: ComponentTypes) => {
       <input
         type="text"
         id="search"
-        placeholder="Search for movies"
+        placeholder="Pesquise por filmes"
         onKeyDown={(e) => onKeyUp(e)}
         value={value}
         onChange={(e) => setValue(e.target.value)}
