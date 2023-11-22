@@ -5,7 +5,7 @@
   --blue: #1a2237;
   --blue-2: #1e3497;
   --background: #10141e;
-  --light: #eaedf5;
+  --light: #c0d2ff;
 }
 
 body {
@@ -54,7 +54,7 @@ body {
 }
 
 .section-title {
-  color: hsl(223, 36%, 84%);
+  color: var(--light);
   text-align: center;
   @media (min-width: 922px) {
     text-align: left;

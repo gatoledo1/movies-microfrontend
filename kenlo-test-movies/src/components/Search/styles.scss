@@ -17,6 +17,9 @@
     color: var(--light);
     margin-left: 15px;
     width: 80%;
+    &::placeholder {
+      color: var(--light);
+    }
 
     &:focus {
       outline: none;

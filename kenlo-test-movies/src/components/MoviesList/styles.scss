@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(152px, 1fr));
   gap: 1rem;
-  transition: all ease 0.3s;
 
   @media (min-width: 600px) {
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
