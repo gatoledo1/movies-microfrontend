@@ -15,7 +15,7 @@ interface ComponentTypes {
 function Movie({ movie, isFav, addToFavorites, detailsPage = null }: ComponentTypes) {
   return (
     <div className="movie">
-      {isFav(movie.id) ? 
+      {isFav?.(movie.id) ? 
         <AiOutlineStar onClick={() => addToFavorites(movie)} /> 
         : 
         <AiFillStar onClick={() => addToFavorites(movie)} />
