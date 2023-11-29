@@ -5,7 +5,7 @@ import Header from "../../components/Header";
 import MoviesList from "../../components/MoviesList";
 import Loader from "../../components/Loader";
 import { getMovies } from "../../services/getMovies";
-import { useFavourites } from "../../utils/useFavorites";
+import { useFavorites } from "../../utils/useFavorites";
 import { InView } from "react-intersection-observer";
 import { DataRequest } from "../../types/DataRequest";
 
@@ -20,7 +20,7 @@ const Painel = lazy(() => import("PanelApp/Panel"));
 const ContainerMovies = ({ filter, header }: ComponentTypes) => {
   const [homeData, setHomeData] = useState<DataRequest>();
   const dataMutable = useRef<DataRequest>();
-  const { favourites } = useFavourites();
+  const { FavoriteData } = useFavorites();
   const [loading, setLoading] = useState(false);
   const [pageState, setPageState] = useState(1);
   const [genre, setGenre] = useState(0);
@@ -36,7 +36,7 @@ const ContainerMovies = ({ filter, header }: ComponentTypes) => {
         dataMutable.current = data;
       })();
     } else {
-      setHomeData({ results: favourites });
+      setHomeData({ results: FavoriteData });
     }
   }, []);
 

@@ -2,24 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import defaultImage from "../../assets/no-image.jpg";
-import { useFavourites } from "../../utils/useFavorites";
 import "./styles.scss";
 import { MovieData } from "../../types/MovieData";
 
 interface ComponentTypes {
   movie: MovieData;
   detailsPage?: boolean | null;
+  addToFavorites?: (movie: MovieData) => void;
+  isFav?: (id: number) => boolean;
 }
 
-function Movie({ movie, detailsPage = null }: ComponentTypes) {
-  const { isFav, addToFavourites } = useFavourites();
-
+function Movie({ movie, isFav, addToFavorites, detailsPage = null }: ComponentTypes) {
   return (
     <div className="movie">
       {isFav(movie.id) ? 
-        <AiOutlineStar onClick={() => addToFavourites(movie)} /> 
+        <AiOutlineStar onClick={() => addToFavorites(movie)} /> 
         : 
-        <AiFillStar onClick={() => addToFavourites(movie)} />
+        <AiFillStar onClick={() => addToFavorites(movie)} />
       }
       <Link to={`/movie/${movie.id}`} key={movie.id}>
         {!detailsPage && <div className="shadow"></div>}
