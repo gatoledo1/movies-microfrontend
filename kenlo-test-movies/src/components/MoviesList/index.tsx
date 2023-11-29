@@ -1,13 +1,16 @@
 import React from "react";
 import Movie from "../Movie";
-import "./styles.scss"
+import "./styles.scss";
 import { MovieData } from "../../types/MovieData";
+import { useFavorites } from "../../utils/useFavorites";
 
-const MoviesList = ({data}: {data: Array<MovieData>}) => {
+const MoviesList = ({ data }: { data: Array<MovieData> }) => {
+  const { isFav, addToFavorites } = useFavorites();
+
   return (
     <div className="popular-movies">
       {data.map((movie, index) => {
-        return <Movie key={`${movie.id}-${index}`} movie={movie} detailsPage={false} />;
+        return <Movie key={`${movie.id}-${index}`} isFav={isFav} addToFavorites={addToFavorites} movie={movie} detailsPage={false} />;
       })}
     </div>
   );
