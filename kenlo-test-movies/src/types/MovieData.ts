@@ -31,6 +31,21 @@ export interface MovieData {
     iso_3166_1?: string;
     name: string;
   }>;
+  providers?: {
+    link: string;
+    flatrate?: Array<{
+      logo_path: string;
+      provider_id: number;
+      provider_name: string;
+      display_priority: number;
+    }>;
+    buy?: Array<{
+      logo_path: string;
+      provider_id: number;
+      provider_name: string;
+      display_priority: number;
+    }>;
+  };
   release_date: string;
   revenue?: number;
   runtime?: number;
